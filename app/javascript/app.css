@@ -1,0 +1,43 @@
+body {
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  /* background-color: blue; */
+  text-align: center;
+  height: 15vh;
+}
+
+/* .header h1 { */
+/* margin-top: 1vh; */
+/* } */
+
+.inputArea {
+  display: flex;
+  margin-left: 13.5vw;
+}
+
+.inputArea input {
+  width: 30vw;
+  height: 5vh;
+  margin-left: 1vw;
+}
+
+.songArea {
+  display: flex;
+}
+
+.songList {
+  height: 75vh;
+  /* width: 45vw; */
+  width: 33%;
+  background-color: rgba(150, 150, 150, 0.5);
+}
+
+.videoPlayer {
+  flex: 1;
+  height: 75vh;
+  background-color: pink;
+}

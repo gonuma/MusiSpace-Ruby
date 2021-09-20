@@ -2,12 +2,12 @@
 
 one:
   band: MyString
-  song: MyString
+  title: MyString
   url: MyString
   slug: MyString
 
 two:
   band: MyString
-  song: MyString
+  title: MyString
   url: MyString
   slug: MyString
