@@ -48,7 +48,7 @@ module Api
             private
 
             def song_params
-                params.require(:song).permit(:band, :title)
+                params.require(:song).permit(:band, :title, :url, :img_url)
             end
 
             def options

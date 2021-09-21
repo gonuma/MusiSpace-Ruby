@@ -4,40 +4,31 @@ body {
   padding: 0;
 }
 
-.header {
-  /* background-color: blue; */
-  text-align: center;
-  height: 15vh;
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 
-/* .header h1 { */
-/* margin-top: 1vh; */
-/* } */
-
-.inputArea {
-  display: flex;
-  margin-left: 13.5vw;
-}
-
-.inputArea input {
+input {
+  height: 3vh;
   width: 30vw;
-  height: 5vh;
-  margin-left: 1vw;
 }
 
-.songArea {
-  display: flex;
+.header {
+  text-align: center;
+  /* height: 15vh; */
 }
 
-.songList {
-  height: 75vh;
-  /* width: 45vw; */
-  width: 33%;
-  background-color: rgba(150, 150, 150, 0.5);
+#fullComments {
+  background-color: rgb(150, 150, 150, 0.9);
+  width: 75.1vw;
+  height: 89.5vh;
+  left: 0;
+  position: absolute;
+  margin-left: 16.6vw;
+  margin-top: -3.7vh;
 }
 
-.videoPlayer {
-  flex: 1;
-  height: 75vh;
-  background-color: pink;
-}
+/* h1 {
+  margin-left: 10vw;
+} */

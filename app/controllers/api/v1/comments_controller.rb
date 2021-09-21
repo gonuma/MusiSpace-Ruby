@@ -3,6 +3,12 @@ module Api
         class CommentsController < ApplicationController
             protect_from_forgery with: :null_session
 
+            def show
+                comments = Comment.all
+
+                render json: CommentSerializer.new(comments).serialized_json
+            end
+
             def create
                 comment = Comment.new(comment_params)
             

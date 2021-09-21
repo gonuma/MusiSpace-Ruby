@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2021_09_20_061214) do
     t.string "band"
     t.string "title"
     t.string "url"
+    t.string "img_url"
     t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
