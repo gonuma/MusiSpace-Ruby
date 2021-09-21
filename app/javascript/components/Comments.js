@@ -29,8 +29,17 @@ export default function Comments() {
   const commentDisplay = () => {
     return comments.map((comment) => {
       return (
-        <Grid item xs={12}>
-          {comment}
+        <Grid
+          item
+          xs={12}
+          style={{
+            marginBottom: "1vh",
+            //  fontWeight: "bold"
+          }}
+        >
+          <Box border={1} padding={1}>
+            {comment}
+          </Box>
         </Grid>
       );
     });
@@ -67,9 +76,16 @@ export default function Comments() {
           Submit
         </Button>
         <input id="commentInput" placeholder="What do you think?"></input>
-      </Grid>
-      <Grid item xs={12} style={{ marginBottom: "2vh", marginLeft: "2vw" }}>
-        {commentDisplay()}
+        <Grid
+          item
+          xs={12}
+          style={{
+            // backgroundColor: "red",
+            marginTop: "2vh",
+          }}
+        >
+          {commentDisplay()}
+        </Grid>
       </Grid>
     </Grid>
   );
