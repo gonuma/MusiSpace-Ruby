@@ -20,12 +20,14 @@ input {
 }
 
 #fullComments {
-  background-color: rgb(150, 150, 150);
+  $dark: #969696;
+  // background-color: rgb(150, 150, 150);
+  background-color: rgba($dark, 0.9);
   width: 75.1vw;
   height: 89.5vh;
   left: 0;
   position: absolute;
-  margin-left: 16.6vw;
+  margin-left: 18.3vw;
   margin-top: -3.7vh;
 }
 
