@@ -3,7 +3,7 @@ import Header from "./Header";
 import SongList from "./SongList";
 import VideoPlayer from "./VideoPlayer";
 import CommentSidebar from "./CommentSidebar";
-import "../app.scss";
+import "../../assets/stylesheets/app.scss";
 import { Grid, Box } from "@material-ui/core";
 
 const api_key = "AIzaSyATC2pMRysYmjn2-88IrLySAkhM3TMxlNI";
