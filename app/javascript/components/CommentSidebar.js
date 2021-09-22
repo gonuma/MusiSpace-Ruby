@@ -1,16 +1,8 @@
 import React, { useState } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { toggleCommentsOn } from "../redux/toggleCommentSlice";
 import Comments from "./Comments";
 import { Grid, Button } from "@material-ui/core";
 
 export default function CommentSidebar() {
-  // const { commentToggle } = useSelector((state) => state.commentToggle);
-  // const dispatch = useDispatch();
-
-  //   const commentToggler = () => {
-  //     dispatch(toggleComments());
-  //   };
   const [commentView, setCommentView] = useState(false);
 
   return (
@@ -20,11 +12,10 @@ export default function CommentSidebar() {
         height: "89.5vh",
         overflowX: "scroll",
         overflowY: "scroll",
-        // backgroundColor: "navy",
       }}
     >
       <Button
-        style={{ marginLeft: "1.15vw" }}
+        style={{ marginTop: "1vh", marginLeft: "1.15vw", fontWeight: "bold" }}
         variant="contained"
         onClick={() => {
           setCommentView(!commentView);

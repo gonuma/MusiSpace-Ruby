@@ -1,20 +1,16 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { toggleCommentsOff } from "../redux/toggleCommentSlice";
 import { changeComments, addComment } from "../redux/commentSlice";
 import axios from "axios";
 import { Grid, Box, Button, Hidden } from "@material-ui/core";
-// import { display } from "@mui/system";
 
 export default function Comments() {
   const { currentSong } = useSelector((state) => state.currentSong);
   const { comments } = useSelector((state) => state.comments);
-  // const { commentToggle } = useSelector((state) => state.commentToggle);
   const dispatch = useDispatch();
 
   const temp = [];
   const commentSetter = async () => {
-    // console.log(currentSong);
     await axios.get("/api/v1/songs").then((res) => {
       for (const comment of res.data.included) {
         if (comment.attributes.song_id === currentSong.id) {
@@ -37,7 +33,6 @@ export default function Comments() {
           xs={12}
           style={{
             marginBottom: "1vh",
-            //  fontWeight: "bold"
           }}
         >
           <Box border={1} padding={1}>
@@ -59,9 +54,6 @@ export default function Comments() {
 
   return (
     <Grid container id="fullComments">
-      {/* <Grid item xs={12}>
-        Close
-      </Grid> */}
       <Grid item style={{ marginLeft: "2vw" }}>
         <Button
           variant="contained"
@@ -69,7 +61,8 @@ export default function Comments() {
             let comment = document.getElementById("commentInput").value;
             let commenter = document
               .getElementById("username")
-              .innerText.split("o ")[1];
+              .innerText.split("e, ")[1]
+              .split("!")[0];
             document.getElementById("commentInput").value = null;
             dispatch(addComment({ body: comment, poster: commenter }));
             axios.post("/api/v1/comments", {
