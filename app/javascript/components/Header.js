@@ -55,9 +55,6 @@ export default function Header(props) {
 
   return (
     <Grid container>
-      <Grid item xs={12}>
-        <h1 className="header">MusiSpace 2.0</h1>
-      </Grid>
       <Grid item style={{ marginLeft: "15%" }}>
         <Button variant="contained" onClick={() => uploadSong()}>
           Post Song

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+ get 'pages/newAcc'
+ get 'pages/login'
  root 'pages#index'
  
   namespace :api do
@@ -8,5 +11,4 @@ Rails.application.routes.draw do
     end
   end
 
-  get '*path', to: 'pages#index', via: :all
 end
