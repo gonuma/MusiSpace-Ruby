@@ -12,9 +12,6 @@ const resultLimit = 1;
 export default function Home() {
   return (
     <Grid container>
-      {/* <Link to="/login">
-        <Button>Login</Button>
-      </Link> */}
       <Grid item xs={2}>
         <Box
           style={{

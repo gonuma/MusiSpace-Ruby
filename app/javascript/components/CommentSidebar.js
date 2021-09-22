@@ -24,6 +24,7 @@ export default function CommentSidebar() {
       }}
     >
       <Button
+        style={{ marginLeft: "1.15vw" }}
         variant="contained"
         onClick={() => {
           setCommentView(!commentView);

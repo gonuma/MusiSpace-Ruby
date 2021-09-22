@@ -50,7 +50,7 @@ export default function SongList(props) {
             <Grid item xs={12}>
               <Button
                 variant="outlined"
-                style={{ width: "100%" }}
+                style={{ width: "100%", color: "white" }}
               >{`${song.band} - ${song.title}`}</Button>
             </Grid>
             <Grid item xs={12}>
@@ -81,7 +81,8 @@ export default function SongList(props) {
         // backgroundColor: "red",
         overflowX: "scroll",
         overflowY: "scroll",
-        height: "89.5vh",
+        height: "94.3vh",
+        backgroundColor: "black",
       }}
     >
       <h1 onClick={() => console.log(songList, currentSong, api_key)}>

@@ -55,7 +55,7 @@ export default function Header(props) {
 
   return (
     <Grid container>
-      <Grid item style={{ marginLeft: "15%" }}>
+      <Grid item style={{ marginLeft: "18%" }}>
         <Button variant="contained" onClick={() => uploadSong()}>
           Post Song
         </Button>

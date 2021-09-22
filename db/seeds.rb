@@ -22,18 +22,22 @@ songs = Song.create([
 comments = Comment.create([
     {
         body: "This song is amazing!",
-        song: songs.first
+        song: songs.first,
+        commenter: "Greggy"
     },
     {
         body: "RIP",
-        song: songs.first
+        song: songs.first,
+        commenter: "Riku"
     },
     {
         body: "Easily their best song",
-        song: songs.first
+        song: songs.first,
+        commenter: "Wasabi"
     },
     {
         body: "This song's so trippy",
-        song: songs.last
+        song: songs.last,
+        commenter: "Yo Mama"
     }
 ])

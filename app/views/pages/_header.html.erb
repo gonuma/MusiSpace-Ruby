@@ -10,8 +10,10 @@
        <li class="nav-item">
       <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:"nav-link" %>
        </li>
-    <li>
-    <%= "Hello #{current_user.email}"%>
+    <li class="nav-item">
+    <div id="username">
+    <%= "Hey there, #{current_user.username}!"%>
+    <div>
     </li>
     </ul>
   </div>

@@ -18,8 +18,11 @@ export default function Comments() {
     await axios.get("/api/v1/songs").then((res) => {
       for (const comment of res.data.included) {
         if (comment.attributes.song_id === currentSong.id) {
-          console.log(comment.attributes.body);
-          temp.push(comment.attributes.body);
+          console.log(comment.attributes.body, comment.attributes.commenter);
+          temp.push({
+            body: comment.attributes.body,
+            poster: comment.attributes.commenter,
+          });
         }
       }
       dispatch(changeComments(temp));
@@ -38,7 +41,7 @@ export default function Comments() {
           }}
         >
           <Box border={1} padding={1}>
-            {comment}
+            {`${comment.poster} - ${comment.body}`}
           </Box>
         </Grid>
       );
@@ -64,11 +67,15 @@ export default function Comments() {
           variant="contained"
           onClick={() => {
             let comment = document.getElementById("commentInput").value;
+            let commenter = document
+              .getElementById("username")
+              .innerText.split("o ")[1];
             document.getElementById("commentInput").value = null;
-            dispatch(addComment(comment));
+            dispatch(addComment({ body: comment, poster: commenter }));
             axios.post("/api/v1/comments", {
               body: comment,
               song_id: currentSong.id,
+              commenter: commenter,
             });
             console.log(comment);
           }}

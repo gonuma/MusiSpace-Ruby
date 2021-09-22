@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2021_09_22_052208) do
 
   create_table "comments", force: :cascade do |t|
     t.string "body"
+    t.string "commenter"
     t.bigint "song_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
