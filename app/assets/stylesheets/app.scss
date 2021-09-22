@@ -14,28 +14,56 @@ body {
   width: 0px;
   background: transparent;
 }
+@media screen and (min-width: 1000px) {
+  input {
+    height: 3vh;
+    width: 30vw;
+  }
 
-input {
-  height: 3vh;
-  width: 30vw;
+  .header {
+    text-align: center;
+  }
+
+  #fullComments {
+    $dark: #969696;
+    background-color: rgba($dark, 0.9);
+    width: 75.1vw;
+    height: 89.5vh;
+    left: 0;
+    position: absolute;
+    margin-left: 16.6vw;
+    margin-top: -4.7vh;
+  }
+
+  #username {
+    margin-left: 1.5vw;
+    color: white !important;
+  }
 }
 
-.header {
-  text-align: center;
-}
+@media screen and (min-width: 500px) and (max-width: 999px) {
+  input {
+    height: 3vh;
+    width: 30vw;
+  }
 
-#fullComments {
-  $dark: #969696;
-  background-color: rgba($dark, 0.9);
-  width: 75.1vw;
-  height: 89.5vh;
-  left: 0;
-  position: absolute;
-  margin-left: 16.6vw;
-  margin-top: -4.7vh;
-}
+  .header {
+    text-align: center;
+  }
 
-#username {
-  margin-left: 1.5vw;
-  color: white !important;
+  #fullComments {
+    $dark: #969696;
+    background-color: rgba($dark, 0.9);
+    width: 75.1vw;
+    height: 89.5vh;
+    left: 0;
+    position: absolute;
+    margin-left: 16.6vw;
+    margin-top: -4.7vh;
+  }
+
+  #username {
+    margin-left: 1.5vw;
+    color: white !important;
+  }
 }

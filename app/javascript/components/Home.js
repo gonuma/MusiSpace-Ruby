@@ -12,7 +12,7 @@ const resultLimit = 1;
 export default function Home() {
   return (
     <Grid container>
-      <Grid item xs={2}>
+      <Grid item xs={5} md={2}>
         <Box
           style={{
             height: "90vh",
@@ -23,13 +23,13 @@ export default function Home() {
           <SongList api_key={api_key} resultLimit={resultLimit} />
         </Box>
       </Grid>
-      <Grid item xs={9}>
+      <Grid item xs={5} md={9}>
         <VideoPlayer />
       </Grid>
-      <Grid item xs={1}>
+      <Grid item xs={2} md={1}>
         <CommentSidebar />
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} md={12}>
         <Box mb={2}>
           <Header api_key={api_key} resultLimit={resultLimit} />
         </Box>
