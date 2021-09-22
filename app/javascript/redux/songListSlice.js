@@ -10,12 +10,7 @@ export const songListSlice = createSlice({
       state.songList.push(action.payload);
     },
     removeSong: (state, action) => {
-      console.log(action.payload);
-      //   for (const song of state.songList) {
-      //     if (song === action.payload) {
-      //       console.log(`${action.payload} found!`);
-      //     }
-      //   }
+      state.songList = action.payload;
     },
     // newList: (state, action) => {
     //   console.log(action.payload);

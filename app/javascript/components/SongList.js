@@ -11,6 +11,13 @@ export default function SongList(props) {
   const { currentSong } = useSelector((state) => state.currentSong);
   const dispatch = useDispatch();
 
+  let currentUser = document
+    .getElementById("username")
+    .innerText.split("e, ")[1]
+    .split("!")[0];
+
+  let temp = [...songList];
+
   const songListSetter = async () => {
     await axios.get("/api/v1/songs").then((res) => {
       // const temp = [];
@@ -58,6 +65,31 @@ export default function SongList(props) {
                 src={`https://i.ytimg.com/vi/${song.img_url}/mqdefault.jpg`}
               />
             </Grid>
+            <div>
+              {currentUser === "greggy" ? (
+                <Button
+                  style={{ backgroundColor: "red" }}
+                  onClick={() => {
+                    let fakeSlug = `${song.band
+                      .toLowerCase()
+                      .replaceAll(" ", "-")
+                      .trim()}-${song.title
+                      .toLowerCase()
+                      .replaceAll(" ", "-")
+                      .trim()}`;
+                    axios.delete(`/api/v1/songs/${fakeSlug}`);
+                    for (let i = 0; i < songList.length; i++) {
+                      if (song.title === songList[i].title) {
+                        temp.splice(i, 1);
+                        dispatch(removeSong(temp));
+                      }
+                    }
+                  }}
+                >
+                  Delete
+                </Button>
+              ) : null}
+            </div>
           </Box>
         </Grid>
       );
@@ -84,10 +116,8 @@ export default function SongList(props) {
         height: "94.3vh",
       }}
     >
-      <Box mb={-10}>
-        <h1 onClick={() => console.log(songList, currentSong, api_key)}>
-          Recent Songs
-        </h1>
+      <Box mb={-1}>
+        <h1 onClick={() => console.log(songList)}>Recent Songs</h1>
       </Box>
       {listPopulator()}
     </Grid>

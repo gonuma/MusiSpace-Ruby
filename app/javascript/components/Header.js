@@ -9,6 +9,11 @@ export default function Header(props) {
   const { songList } = useSelector((state) => state.songList);
   const dispatch = useDispatch();
 
+  let currentUser = document
+    .getElementById("username")
+    .innerText.split("e, ")[1]
+    .split("!")[0];
+
   const uploadSong = () => {
     if (
       document.getElementById("bandInput").value !== "" &&

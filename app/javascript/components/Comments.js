@@ -9,12 +9,16 @@ export default function Comments() {
   const { comments } = useSelector((state) => state.comments);
   const dispatch = useDispatch();
 
+  let currentUser = document
+    .getElementById("username")
+    .innerText.split("e, ")[1]
+    .split("!")[0];
+
   const temp = [];
   const commentSetter = async () => {
     await axios.get("/api/v1/songs").then((res) => {
       for (const comment of res.data.included) {
         if (comment.attributes.song_id === currentSong.id) {
-          console.log(comment.attributes.body, comment.attributes.commenter);
           temp.push({
             body: comment.attributes.body,
             poster: comment.attributes.commenter,
@@ -59,18 +63,13 @@ export default function Comments() {
           variant="contained"
           onClick={() => {
             let comment = document.getElementById("commentInput").value;
-            let commenter = document
-              .getElementById("username")
-              .innerText.split("e, ")[1]
-              .split("!")[0];
             document.getElementById("commentInput").value = null;
-            dispatch(addComment({ body: comment, poster: commenter }));
+            dispatch(addComment({ body: comment, poster: currentUser }));
             axios.post("/api/v1/comments", {
               body: comment,
               song_id: currentSong.id,
-              commenter: commenter,
+              commenter: currentUser,
             });
-            console.log(comment);
           }}
         >
           Submit
