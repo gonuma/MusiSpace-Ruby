@@ -42,6 +42,18 @@ export default function Comments() {
           <Box border={1} padding={1}>
             {`${comment.poster} - ${comment.body}`}
           </Box>
+          <div>
+            {currentUser === "greggy" ? (
+              <Button
+                style={{ marginLeft: "0.5vw", backgroundColor: "red" }}
+                onClick={() => {}}
+              >
+                Delete
+              </Button>
+            ) : (
+              <></>
+            )}
+          </div>
         </Grid>
       );
     });

@@ -68,7 +68,7 @@ export default function SongList(props) {
             <div>
               {currentUser === "greggy" ? (
                 <Button
-                  style={{ backgroundColor: "red" }}
+                  style={{ marginLeft: "0.5vw", backgroundColor: "red" }}
                   onClick={() => {
                     let fakeSlug = `${song.band
                       .toLowerCase()
@@ -88,7 +88,9 @@ export default function SongList(props) {
                 >
                   Delete
                 </Button>
-              ) : null}
+              ) : (
+                <></>
+              )}
             </div>
           </Box>
         </Grid>
