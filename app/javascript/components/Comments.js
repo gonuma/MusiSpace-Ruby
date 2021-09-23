@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeComments, addComment } from "../redux/commentSlice";
 import axios from "axios";
-import { Grid, Box, Button, Hidden } from "@material-ui/core";
+import { Grid, Box, Button } from "@material-ui/core";
 
 export default function Comments() {
   const { currentSong } = useSelector((state) => state.currentSong);

@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'fast_jsonapi'
 
+#Read .env
+gem 'dotenv-rails'
+
 #User authentication
 gem 'devise', '~> 4.8'
 
