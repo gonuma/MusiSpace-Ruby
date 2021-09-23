@@ -22,7 +22,9 @@ export default function Comments() {
           temp.push({
             body: comment.attributes.body,
             poster: comment.attributes.commenter,
+            id: comment.attributes.id,
           });
+          // console.log(comment.attributes.id);
         }
       }
       dispatch(changeComments(temp));
@@ -32,28 +34,34 @@ export default function Comments() {
   const commentDisplay = () => {
     return comments.map((comment) => {
       return (
-        <Grid
-          item
-          xs={12}
-          style={{
-            marginBottom: "1vh",
-          }}
-        >
-          <Box border={1} padding={1}>
-            {`${comment.poster} - ${comment.body}`}
-          </Box>
-          <div>
-            {currentUser === "greggy" ? (
+        <Grid container>
+          <Grid
+            item
+            xs={10}
+            style={{
+              marginBottom: "1vh",
+            }}
+          >
+            <Box border={1} padding={1}>
+              {`${comment.poster} - ${comment.body}`}
+            </Box>
+          </Grid>
+          <Grid xs={2}>
+            {currentUser === "greggy" || currentUser === comment.poster ? (
               <Button
                 style={{ marginLeft: "0.5vw", backgroundColor: "red" }}
-                onClick={() => {}}
+                onClick={() => {
+                  // console.log(comment.id);
+                  axios.delete(`/api/v1/comments/${comment.id}`);
+                  commentSetter();
+                }}
               >
                 Delete
               </Button>
             ) : (
               <></>
             )}
-          </div>
+          </Grid>
         </Grid>
       );
     });
