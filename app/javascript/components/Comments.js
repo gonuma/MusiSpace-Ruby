@@ -53,7 +53,12 @@ export default function Comments() {
                 onClick={() => {
                   // console.log(comment.id);
                   axios.delete(`/api/v1/comments/${comment.id}`);
-                  commentSetter();
+                  for (const post of comments) {
+                    if (comment.id !== post.id) {
+                      temp.push(post);
+                    }
+                  }
+                  dispatch(changeComments(temp));
                 }}
               >
                 Delete

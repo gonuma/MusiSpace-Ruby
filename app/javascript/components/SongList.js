@@ -28,6 +28,8 @@ export default function SongList(props) {
             id: track.attributes.id,
             band: track.attributes.band,
             title: track.attributes.title,
+            slug: track.attributes.slug,
+            poster: track.attributes.poster,
             url: track.attributes.url,
             img_url: track.attributes.img_url,
           })
@@ -47,9 +49,12 @@ export default function SongList(props) {
               dispatch(
                 changeSong({
                   id: song.id,
-                  title: song.title,
                   band: song.band,
+                  title: song.title,
+                  slug: song.slug,
+                  poster: song.poster,
                   url: song.url,
+                  img_url: song.img_url,
                 })
               )
             }
@@ -70,14 +75,7 @@ export default function SongList(props) {
                 <Button
                   style={{ marginLeft: "0.5vw", backgroundColor: "red" }}
                   onClick={() => {
-                    let fakeSlug = `${song.band
-                      .toLowerCase()
-                      .replaceAll(" ", "-")
-                      .trim()}-${song.title
-                      .toLowerCase()
-                      .replaceAll(" ", "-")
-                      .trim()}`;
-                    axios.delete(`/api/v1/songs/${fakeSlug}`);
+                    axios.delete(`/api/v1/songs/${song.slug}`);
                     for (let i = 0; i < songList.length; i++) {
                       if (song.title === songList[i].title) {
                         temp.splice(i, 1);

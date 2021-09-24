@@ -3,19 +3,22 @@ songs = Song.create([
         band: "Nirvana",
         title: "Smells Like Teen Spirit",
         url: "hTWKbfoikeg",
-        img_url: "hTWKbfoikeg"
+        img_url: "hTWKbfoikeg",
+        poster: "Wasabi"
     },
     {
         band: "Pink Floyd",
         title: "Dogs",
         url: "4QA30qkRYy8",
-        img_url: "4QA30qkRYy8"
+        img_url: "4QA30qkRYy8",
+        poster: "Riku"
     },
     {
         band: "Pink Floyd",
         title: "Atom Heart Mother",
         url: "uUHb3cBvWMY",
-        img_url: "Fku7hi5kI-c"
+        img_url: "Fku7hi5kI-c",
+        poster: "Riku"
     }
 ])
 
