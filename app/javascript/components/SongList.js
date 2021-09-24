@@ -22,8 +22,10 @@ export default function SongList(props) {
     await axios.get("/api/v1/songs").then((res) => {
       // const temp = [];
       for (const track of res.data.data) {
-        if (track.attributes.poster === currentUser) {
-          console.log(track.attributes);
+        if (
+          track.attributes.poster === currentUser ||
+          currentUser === "greggy"
+        ) {
           dispatch(
             addSong({
               id: track.attributes.id,
