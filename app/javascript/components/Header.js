@@ -36,13 +36,13 @@ export default function Header(props) {
         .then((res) => {
           let thumbnail = res.items[0].snippet.thumbnails.medium.url;
           thumbnail = thumbnail.split("vi/")[1].split("/")[0];
-          console.log(thumbnail);
           let url = res.items[0].id.videoId;
           dispatch(
             addSong({
               band: band,
               title: title,
               url: url,
+              poster: currentUser,
               img_url: thumbnail,
             })
           );
@@ -50,6 +50,7 @@ export default function Header(props) {
             band: band,
             title: title,
             url: url,
+            poster: currentUser,
             img_url: thumbnail,
           });
         });

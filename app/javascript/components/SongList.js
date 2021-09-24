@@ -22,18 +22,20 @@ export default function SongList(props) {
     await axios.get("/api/v1/songs").then((res) => {
       // const temp = [];
       for (const track of res.data.data) {
-        console.log(track.attributes);
-        dispatch(
-          addSong({
-            id: track.attributes.id,
-            band: track.attributes.band,
-            title: track.attributes.title,
-            slug: track.attributes.slug,
-            poster: track.attributes.poster,
-            url: track.attributes.url,
-            img_url: track.attributes.img_url,
-          })
-        );
+        if (track.attributes.poster === currentUser) {
+          console.log(track.attributes);
+          dispatch(
+            addSong({
+              id: track.attributes.id,
+              band: track.attributes.band,
+              title: track.attributes.title,
+              slug: track.attributes.slug,
+              poster: track.attributes.poster,
+              url: track.attributes.url,
+              img_url: track.attributes.img_url,
+            })
+          );
+        }
       }
     });
   };
