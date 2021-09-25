@@ -16,6 +16,19 @@ export default function SongList(props) {
     .innerText.split("e, ")[1]
     .split("!")[0];
 
+  let currentUserId = Number(document.getElementById("userId").innerText);
+
+  const friendList = [];
+  useEffect(() => {
+    axios.get("/friends.json").then((res) => {
+      for (const user of res.data) {
+        if (user.user_id === currentUserId) {
+          friendList.push(user.username);
+        }
+      }
+    });
+  }, []);
+
   let temp = [...songList];
 
   const songListSetter = async () => {
@@ -24,7 +37,8 @@ export default function SongList(props) {
       for (const track of res.data.data) {
         if (
           track.attributes.poster === currentUser ||
-          currentUser === "greggy"
+          currentUser === "greggy" ||
+          friendList.includes(track.attributes.poster)
         ) {
           dispatch(
             addSong({
@@ -120,6 +134,13 @@ export default function SongList(props) {
         height: "94.3vh",
       }}
     >
+      <button
+        onClick={() => {
+          axios.get("/friends.json").then((res) => console.log(res.data));
+        }}
+      >
+        Friend Test
+      </button>
       <Box mb={-1}>
         <h1 onClick={() => console.log(songList)}>Recent Songs</h1>
       </Box>

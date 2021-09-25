@@ -14,6 +14,8 @@ export default function Header(props) {
     .innerText.split("e, ")[1]
     .split("!")[0];
 
+  let currentUserId = Number(document.getElementById("userId").innerText);
+
   const uploadSong = () => {
     if (
       document.getElementById("bandInput").value !== "" &&

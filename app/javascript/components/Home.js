@@ -6,7 +6,7 @@ import VideoPlayer from "./VideoPlayer";
 import CommentSidebar from "./CommentSidebar";
 import { Grid, Box, Button } from "@material-ui/core";
 
-const api_key = process.env.REACT_APP_API_KEY;
+const api_key = "AIzaSyBfPHBlVhS2FknDZr6pxXkKP2NhA-zt0xY";
 const resultLimit = 1;
 
 export default function Home() {
