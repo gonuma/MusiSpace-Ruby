@@ -1,4 +1,4 @@
-class SongSerializer
+class UserSerializer
   include FastJsonapi::ObjectSerializer
   attributes :id, :band, :title, :url, :slug, :img_url, :poster
 
