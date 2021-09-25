@@ -61,7 +61,6 @@ export default function SongList(props) {
       return (
         <Grid container justifyContent="center">
           <Box
-            mb={1}
             style={{ cursor: "pointer" }}
             onClick={() =>
               dispatch(
@@ -89,6 +88,7 @@ export default function SongList(props) {
                 />
               </Grid>
             </Grid>
+            <p>{`Posted by: ${song.poster}`}</p>
           </Box>
           <Box mb={1}>
             <Grid item xs={12}>
