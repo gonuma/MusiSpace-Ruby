@@ -30,9 +30,6 @@ gem 'dotenv-rails'
 #User authentication
 gem 'devise', '~> 4.8'
 
-#React on rails
-gem 'react_on_rails'
-
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
