@@ -134,13 +134,6 @@ export default function SongList(props) {
         height: "94.3vh",
       }}
     >
-      <button
-        onClick={() => {
-          axios.get("/friends.json").then((res) => console.log(res.data));
-        }}
-      >
-        Friend Test
-      </button>
       <Box mb={-1}>
         <h1 onClick={() => console.log(songList)}>Recent Songs</h1>
       </Box>
