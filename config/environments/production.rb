@@ -122,6 +122,6 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  config.action_mailer.default_url_options = { host: 'musispace-2.herokuapp.com', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'musispace-2.herokuapp.com', port: ENV['PORT'] || 3000 }
 
 end
