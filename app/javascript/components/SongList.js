@@ -59,41 +59,51 @@ export default function SongList(props) {
   const listPopulator = () => {
     return songList.map((song) => {
       return (
-        <Grid container justifyContent="center">
-          <Box
-            style={{ cursor: "pointer" }}
-            onClick={() =>
-              dispatch(
-                changeSong({
-                  id: song.id,
-                  band: song.band,
-                  title: song.title,
-                  slug: song.slug,
-                  poster: song.poster,
-                  url: song.url,
-                  img_url: song.img_url,
-                })
-              )
-            }
-          >
+        <Grid container justifyContent="center" columnSpacing={1}>
+          <Box mb={1}>
             <Grid item xs={12}>
               <Button
                 variant="outlined"
                 style={{ width: "100%" }}
+                onClick={() =>
+                  dispatch(
+                    changeSong({
+                      id: song.id,
+                      band: song.band,
+                      title: song.title,
+                      slug: song.slug,
+                      poster: song.poster,
+                      url: song.url,
+                      img_url: song.img_url,
+                    })
+                  )
+                }
               >{`${song.band} - ${song.title}`}</Button>
               <Grid item xs={12}>
                 <img
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", cursor: "pointer" }}
                   src={`https://i.ytimg.com/vi/${song.img_url}/mqdefault.jpg`}
+                  onClick={() =>
+                    dispatch(
+                      changeSong({
+                        id: song.id,
+                        band: song.band,
+                        title: song.title,
+                        slug: song.slug,
+                        poster: song.poster,
+                        url: song.url,
+                        img_url: song.img_url,
+                      })
+                    )
+                  }
                 />
               </Grid>
             </Grid>
             <p>{`Posted by: ${song.poster}`}</p>
-          </Box>
-          <Box mb={1}>
             <Grid item xs={12}>
               {currentUser === "greggy" ? (
                 <Button
+                  variant="outlined"
                   style={{ backgroundColor: "red", color: "white" }}
                   onClick={() => {
                     axios.delete(`/api/v1/songs/${song.slug}`);
@@ -111,6 +121,7 @@ export default function SongList(props) {
                 <></>
               )}
               <Button
+                variant="outlined"
                 style={{
                   marginLeft: "0.5vw",
                   backgroundColor: "darkslategray",

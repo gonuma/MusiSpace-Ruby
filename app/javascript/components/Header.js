@@ -2,7 +2,8 @@ import React from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { addSong, removeSong } from "../redux/songListSlice";
-import { Grid, Button, Box } from "@material-ui/core";
+import { Grid, Button, Box, Typography } from "@material-ui/core";
+import AddBoxIcon from "@mui/icons-material/AddBox";
 
 export default function Header(props) {
   const { api_key, resultLimit } = props;
@@ -64,19 +65,19 @@ export default function Header(props) {
   return (
     <Grid container>
       {/* <Box style={{ marginTop: "1vh" }}> */}
-      <Grid item style={{ marginLeft: "8%" }}>
+      <Grid item style={{ marginTop: "0.3vh", marginLeft: "8%" }}>
         <Button variant="contained" onClick={() => uploadSong()}>
-          Post Song
+          <AddBoxIcon></AddBoxIcon>
         </Button>
       </Grid>
-      <Grid item style={{ marginTop: "0.3vh", marginLeft: "2vw" }}>
+      <Grid item style={{ marginTop: "0.75vh", marginLeft: "2vw" }}>
         <input
           style={{ width: "25vw" }}
           placeholder="Band Name"
           id="bandInput"
         ></input>
       </Grid>
-      <Grid item style={{ marginTop: "0.3vh", marginLeft: "2vw" }}>
+      <Grid item style={{ marginTop: "0.75vh", marginLeft: "2vw" }}>
         <input
           style={{ width: "25vw" }}
           placeholder="Song Name"

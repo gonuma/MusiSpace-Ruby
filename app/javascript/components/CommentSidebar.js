@@ -16,6 +16,7 @@ export default function CommentSidebar() {
       }}
     >
       <Button
+        variant="outlined"
         style={{ marginTop: "1vh", marginLeft: "1.15vw", fontWeight: "bold" }}
         variant="contained"
         onClick={() => {

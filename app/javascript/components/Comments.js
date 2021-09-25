@@ -83,23 +83,31 @@ export default function Comments() {
 
   return (
     <Grid container id="fullComments">
-      <Grid item style={{ marginLeft: "2vw" }}>
+      <Grid item style={{ marginTop: "1vh", marginLeft: "2vw" }}>
         <Button
           variant="contained"
           onClick={() => {
             let comment = document.getElementById("commentInput").value;
-            document.getElementById("commentInput").value = null;
-            dispatch(addComment({ body: comment, poster: currentUser }));
-            axios.post("/api/v1/comments", {
-              body: comment,
-              song_id: currentSong.id,
-              commenter: currentUser,
-            });
+            if (comment === "") {
+              return;
+            } else {
+              document.getElementById("commentInput").value = null;
+              dispatch(addComment({ body: comment, poster: currentUser }));
+              axios.post("/api/v1/comments", {
+                body: comment,
+                song_id: currentSong.id,
+                commenter: currentUser,
+              });
+            }
           }}
         >
           Submit
         </Button>
-        <input id="commentInput" placeholder="What do you think?"></input>
+        <input
+          style={{ marginLeft: "1vw" }}
+          id="commentInput"
+          placeholder="What do you think?"
+        ></input>
         <Grid
           item
           xs={12}
