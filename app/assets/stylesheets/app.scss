@@ -16,8 +16,7 @@ body {
 }
 @media screen and (min-width: 1000px) {
   input {
-    height: 3vh;
-    width: 30vw;
+    width: 25vw;
   }
 
   .header {
@@ -43,8 +42,11 @@ body {
 
 @media screen and (min-width: 500px) and (max-width: 999px) {
   input {
-    height: 3vh;
-    width: 30vw;
+    width: 15vw;
+  }
+
+  Button {
+    width: 8vw;
   }
 
   .header {
@@ -65,5 +67,15 @@ body {
   #username {
     margin-left: 1.5vw;
     color: white !important;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  input {
+    width: 10vw;
+  }
+
+  Button {
+    width: 3vw;
   }
 }

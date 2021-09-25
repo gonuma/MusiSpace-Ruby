@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Comments from "./Comments";
 import { Grid, Button } from "@material-ui/core";
+import ChatIcon from "@mui/icons-material/Chat";
 
 export default function CommentSidebar() {
   const [commentView, setCommentView] = useState(false);
@@ -21,8 +22,9 @@ export default function CommentSidebar() {
           setCommentView(!commentView);
         }}
       >
-        Comments
+        <ChatIcon></ChatIcon>
       </Button>
+
       {commentView === true ? <Comments /> : null}
     </Grid>
   );

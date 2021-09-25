@@ -82,16 +82,19 @@ export default function SongList(props) {
                 variant="outlined"
                 style={{ width: "100%" }}
               >{`${song.band} - ${song.title}`}</Button>
+              <Grid item xs={12}>
+                <img
+                  style={{ width: "100%" }}
+                  src={`https://i.ytimg.com/vi/${song.img_url}/mqdefault.jpg`}
+                />
+              </Grid>
             </Grid>
+          </Box>
+          <Box mb={1}>
             <Grid item xs={12}>
-              <img
-                src={`https://i.ytimg.com/vi/${song.img_url}/mqdefault.jpg`}
-              />
-            </Grid>
-            <div>
               {currentUser === "greggy" ? (
                 <Button
-                  style={{ marginLeft: "0.5vw", backgroundColor: "red" }}
+                  style={{ backgroundColor: "red", color: "white" }}
                   onClick={() => {
                     axios.delete(`/api/v1/songs/${song.slug}`);
                     for (let i = 0; i < songList.length; i++) {
@@ -107,7 +110,24 @@ export default function SongList(props) {
               ) : (
                 <></>
               )}
-            </div>
+              <Button
+                style={{
+                  marginLeft: "0.5vw",
+                  backgroundColor: "darkslategray",
+                  color: "white",
+                }}
+                onClick={() => {
+                  for (let i = 0; i < songList.length; i++) {
+                    if (song.title === songList[i].title) {
+                      temp.splice(i, 1);
+                      dispatch(removeSong(temp));
+                    }
+                  }
+                }}
+              >
+                Hide
+              </Button>
+            </Grid>
           </Box>
         </Grid>
       );
@@ -134,9 +154,9 @@ export default function SongList(props) {
         height: "94.3vh",
       }}
     >
-      <Box mb={-1}>
-        <h1 onClick={() => console.log(songList)}>Recent Songs</h1>
-      </Box>
+      {/* <Box mb={-1}> */}
+      {/* <h1 onClick={() => console.log(songList)}>Recent Songs</h1> */}
+      {/* </Box> */}
       {listPopulator()}
     </Grid>
   );

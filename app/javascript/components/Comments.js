@@ -104,8 +104,11 @@ export default function Comments() {
           item
           xs={12}
           style={{
-            // backgroundColor: "red",
             marginTop: "2vh",
+            overflowX: "scroll",
+            overflowY: "scroll",
+            height: "83.75vh",
+            width: "71vw",
           }}
         >
           {commentDisplay()}

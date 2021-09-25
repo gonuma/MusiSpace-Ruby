@@ -15,23 +15,22 @@ export default function Home() {
       <Grid item xs={5} md={2}>
         <Box
           style={{
-            height: "90vh",
-            marginLeft: 10,
-            marginRight: 10,
+            height: "94.3vh",
+            marginRight: "0.05%",
           }}
         >
           <SongList api_key={api_key} resultLimit={resultLimit} />
         </Box>
       </Grid>
-      <Grid item xs={5} md={9}>
+      <Grid item xs={6} md={9}>
         <VideoPlayer />
-      </Grid>
-      <Grid item xs={2} md={1}>
-        <CommentSidebar />
-      </Grid>
-      <Grid item xs={12} md={12}>
-        <Box mb={2}>
+        <Box style={{ marginTop: "0.3vh" }}>
           <Header api_key={api_key} resultLimit={resultLimit} />
+        </Box>
+      </Grid>
+      <Grid item xs={1} md={1}>
+        <Box style={{ backgroundColor: "darkslategrey", height: "94.3vh" }}>
+          <CommentSidebar />
         </Box>
       </Grid>
     </Grid>
