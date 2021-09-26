@@ -8,5 +8,8 @@ class PagesController < ApplicationController
     def newAcc
     end
 
+    def profile
+    end
+
     
 end

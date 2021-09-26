@@ -99,7 +99,18 @@ export default function SongList(props) {
                 />
               </Grid>
             </Grid>
-            <p>{`Posted by: ${song.poster}`}</p>
+            <Box
+              pt={0.5}
+              pl={1}
+              pb={1}
+              mb={1}
+              style={{
+                backgroundColor: "darkslategray",
+                color: "white",
+              }}
+            >
+              <div>{`Posted by: ${song.poster}`}</div>
+            </Box>
             <Grid item xs={12}>
               {currentUser === "greggy" ? (
                 <Button

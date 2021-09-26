@@ -66,7 +66,11 @@ export default function Header(props) {
     <Grid container>
       {/* <Box style={{ marginTop: "1vh" }}> */}
       <Grid item style={{ marginTop: "0.3vh", marginLeft: "8%" }}>
-        <Button variant="contained" onClick={() => uploadSong()}>
+        <Button
+          variant="contained"
+          style={{ color: "white", backgroundColor: "darkslategray" }}
+          onClick={() => uploadSong()}
+        >
           <AddBoxIcon></AddBoxIcon>
         </Button>
       </Grid>
